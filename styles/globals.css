@@ -2,26 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  @font-face {
+    font-family: "iranyekan-thin";
+    src: url("/fonts/iranYekanWebThin.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan-light";
+    src: url("/fonts/iranYekanWebLight.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan";
+    src: url("/public/fonts/iranYekanWeb.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan-medium";
+    src: url("/fonts/iranYekanWebMedium.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan-bold";
+    src: url("/fonts/iranYekanWebBold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan-extrabold";
+    src: url("/fonts/iranYekanWebExtraBold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan-black";
+    src: url("/fonts/iranYekanWebBlack.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "iranyekan-extrablack";
+    src: url("/fonts/iranYekanWebExtraBlack.woff2") format("woff2");
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.swiper-button-prev,
+.swiper-button-next {
+  position: grid;
+}
+
+.swiper-button-next {
+  right: 15px !important;
+}
+
+.swiper-button-prev {
+  left: 15px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 7px !important;
+  background-color: white !important;
+}
+.swiper-pagination-bullet-active {
+  width: 20px !important;
+  border-radius: 10px !important;
+  background-color: #5a31f4 !important;
 }
