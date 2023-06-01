@@ -15,12 +15,12 @@ export default function CategoryItem({ header, items }) {
     setSelectedItem(null);
   };
   return (
-    <div className="relative border rounded-md px-4 py-3 group shadow-md">
+    <div className="relative border rounded-sm px-4 py-3 group shadow-sm">
       <div className="flex items-center justify-between">
         <h4>{header}</h4>
         <BsChevronLeft
           size={30}
-          className="cursor-pointer transition-all hover:w-20 hover:bg-white hover:fill-[#5a31f4] hover:border hover:border-[#5A31F4] bg-[#5A31F4] rounded-full p-1 fill-white"
+          className="cursor-pointer transition-all hover:w-20 hover:bg-[#5A31F4] hover:fill-white border hover:border-[#5A31F4] bg-white fill-[#5a31f4] rounded-sm p-1"
         />
       </div>
       <div className="grid grid-cols-3 gap-2 my-2">
@@ -28,7 +28,7 @@ export default function CategoryItem({ header, items }) {
           <div key={idx} href="">
             <Image
               src={item.image}
-              className="rounded-md hover:scale-105 hover:shadow-sm transition-transform delay-75 cursor-pointer"
+              className="rounded-sm hover:scale-105 hover:shadow-sm transition-transform delay-75 cursor-pointer"
               alt="product-image"
               width={300}
               height={200}
@@ -38,8 +38,8 @@ export default function CategoryItem({ header, items }) {
         ))}
       </div>
       {selectedItem && (
-        <div className="absolute flex items-center justify-center z-50 w-full h-full backdrop-blur-sm rounded-md top-0 left-0">
-          <div className="relative bg-white rounded-md overflow-hidden flex justify-between items-center w-3/4 h-3/5 sm:h-1/2 md:h-2/3  animate-appearance">
+        <div className="absolute flex items-center justify-center z-50 w-full h-full backdrop-blur-sm rounded-sm top-0 left-0">
+          <div className="relative bg-white rounded-sm overflow-hidden flex justify-between items-center w-3/4 h-3/5 sm:h-1/2 md:h-2/3  animate-appearance">
             <IoClose
               className="absolute left-1 top-1 bg-[#5A38F4] fill-white rounded-full cursor-pointer"
               size={20}

@@ -15,13 +15,29 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 export default function SwiperContainer() {
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    swiperRef.current.swiper.autoplay.stop();
+  }, [swiperRef]);
+
   return (
-    <div className=" bg-gray-200 rounded-lg shadow-md w-full overflow-hidden">
+    <div
+      className=" bg-gray-200 rounded-lg shadow-md w-full overflow-hidden"
+      onMouseEnter={() => {
+        swiperRef.current.swiper.autoplay.stop();
+      }}
+      onMouseLeave={() => {
+        swiperRef.current.swiper.autoplay.start();
+      }}
+    >
       <Swiper
+        ref={swiperRef}
         slidesPerView={1}
         color="#fff"
         spaceBetween={30}
@@ -33,7 +49,7 @@ export default function SwiperContainer() {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination]}
         className="w-full h-full mx-auto"
       >
         <SwiperSlide className="bg-white text-white caret-slate-100">

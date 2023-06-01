@@ -8,25 +8,25 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // import required modules
-import { FreeMode, Navigation } from "swiper";
+import { FreeMode, Navigation, Pagination } from "swiper";
 import Image from "next/image";
 import dicsountBox from "@/public/img/discount/discount.png";
-import { women_swiper } from "@/data/home";
 
-export default function ProductsSwiper() {
+export default function ProductsSwiper({
+  items,
+  image,
+
+  accentColor,
+  slidesPerView,
+  showDetails,
+}) {
   return (
-    <div className="flex items-center h-[400px] rounded-sm bg-gradient-to-l from-[#a492dc] via-[#a492dc] to-[#b7b1cc]  my-4 p-4 ">
-      <Image
-        src={dicsountBox}
-        alt=""
-        className="hidden lg:block drop-shadow-2xl"
-        quality={100}
-      />
+    <>
       <Swiper
         slidesPerView={1}
         spaceBetween={20}
         freeMode={true}
-        pagination={true}
+        navigation={true}
         modules={[FreeMode, Navigation]}
         className="h-full"
         breakpoints={{
@@ -36,33 +36,48 @@ export default function ProductsSwiper() {
           560: {
             slidesPerView: 3,
           },
+          1024: {
+            slidesPerView: slidesPerView || 3,
+          },
         }}
       >
-        {women_swiper.map((item, idx) => (
+        {items.map((item, idx) => (
           <SwiperSlide
             key={idx}
-            className="flex flex-col items-start justify-between rounded-sm h-full p-2 gap-2 bg-white"
+            className={`flex flex-col items-start justify-between space-y-1 rounded-sm h-full p-2 gap-2 border ${
+              showDetails ? "bg-white" : "bg-transparent"
+            } `}
           >
             <Image
               src={item.image}
               alt={item.name}
-              className="rounded-sm w-full h-3/4 object-cover"
+              className={`rounded-sm w-full object-cover ${
+                showDetails ? "h-3/4" : "h-full"
+              }`}
+              quality={100}
               width={200}
               height={200}
             />
-            <div className="flex flex-col items-end justify-between h-1/4 text-gray-600">
-              <h2 style={{ direction: "ltr" }} className="text-left text-sm">
-                {item.name.length > 35
-                  ? `${item.name.slice(0, 50)}...`
-                  : item.name}
-              </h2>
-              <p className="text-white px-2 rounded-sm bg-[#a492dc]">
-                تومان {item.price}
-              </p>
-            </div>
+            {showDetails && (
+              <div className="flex flex-col items-end justify-center gap-2 h-1/4 text-gray-600">
+                <h2
+                  style={{ direction: "ltr" }}
+                  className="text-left text-sm text-gray-400"
+                >
+                  {item.name.length > 30
+                    ? `${item.name.slice(0, 15)}...`
+                    : item.name}
+                </h2>
+                <span
+                  className={`text-gray-400 border text-xs px-2 py-1 rounded-sm`}
+                >
+                  تومان {item.price}
+                </span>
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 }

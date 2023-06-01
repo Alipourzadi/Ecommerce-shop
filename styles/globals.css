@@ -39,15 +39,24 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  position: grid;
+  color: #ccc !important;
+  transform: scale(0.5) !important;
+  width: 50px !important;
+  height: 80px !important;
+  border: 1px solid #ccc;
+  border-radius: 10px !important;
+  padding: 0.5rem !important;
+  transition: 0.2s;
+  background: white !important;
+  display: none;
+  place-items: center;
+  top: 40% !important;
 }
-
-.swiper-button-next {
-  right: 15px !important;
-}
-
 .swiper-button-prev {
-  left: 15px !important;
+  left: -13px;
+}
+.swiper-button-next {
+  right: -13px;
 }
 
 .swiper-pagination-bullet {

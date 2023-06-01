@@ -508,33 +508,39 @@ export const gamingSwiper = [
 ];
 export const homeImprovSwiper = [
   {
-    name: "",
-    image: "https://ae01.alicdn.com/kf/H973c7fd8079f4820b28f7e5b8d7e4bb6s.jpg",
-    price: "",
+    name: "Product 1",
+    image:
+      "https://s.alicdn.com/@sc04/kf/H739501b165624ceb8d5b0bd81c832b80z.jpg_300x300.jpg",
+    price: "10.99",
   },
   {
-    name: "",
-    image: "https://ae01.alicdn.com/kf/S70e0b1be525948e3ae8ca0dbb5672c06Q.jpg",
-    price: "",
+    name: "Product 2",
+    image:
+      "https://s.alicdn.com/@sc04/kf/H17ea151acc0a44b1b6984c5da1265764e.png_300x300.png",
+    price: "15.99",
   },
   {
-    name: "",
-    image: "https://ae03.alicdn.com/kf/S0e018b6c00ae409781e815c79d44b57bL.jpg",
-    price: "",
+    name: "Product 3",
+    image:
+      "https://s.alicdn.com/@sc04/kf/Hb06225a0c22c43ddb9a2cbdb9088166eB.jpg_300x300.jpg",
+    price: "20.99",
   },
   {
-    name: "",
-    image: "https://ae03.alicdn.com/kf/H3c3a10b673554dc3a2957801aac40174z.jpg",
-    price: "",
+    name: "Product 4",
+    image:
+      "https://s.alicdn.com/@sc04/kf/H3e71445133674ed89ba78d4c60431cf93.jpg_300x300.jpg",
+    price: "12.99",
   },
   {
-    name: "",
-    image: "https://ae03.alicdn.com/kf/Se9ebef1491684e9bbde7f7f97e9fcf78k.jpg",
-    price: "",
+    name: "Product 5",
+    image:
+      "https://s.alicdn.com/@sc04/kf/U667f238ba5994515bd35bf04ab4bcab5E.jpeg_300x300.jpeg",
+    price: "18.99",
   },
   {
-    name: "",
-    image: "https://ae03.alicdn.com/kf/S882fd95abb7b40ac860d4a9fab1df995Y.jpg",
-    price: "",
+    name: "Product 6",
+    image:
+      "https://s.alicdn.com/@sc04/kf/Hc1ff40e9ef0b463995babcfe124b2c13l.jpg_300x300.jpg",
+    price: "9.99",
   },
 ];

@@ -8,6 +8,7 @@ import { FiChevronDown, FiSearch } from "react-icons/fi";
 import Logo from "../../public/img/logo.png";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { BiUser } from "react-icons/bi";
+import Input from "../ui/Input";
 
 export default function SearchBar() {
   const [isVissible, setIsVissible] = useState(false);
@@ -40,13 +41,13 @@ export default function SearchBar() {
       </ul>
       <div className="flex justify-center items-center gap-2 px-4 w-full md:w-1/2">
         <div className="flex items-center justify-center h-10 w-full  bg-zinc-100 py-2 pr-4 rounded-md shadow-md shadow-zinc-200 relative">
-          <div className="bg-[#5A31F4] h-10 w-10 flex justify-center items-center rounded-l-mdno text-white hover:opacity-80 cursor-pointer">
+          <div className="bg-[#5A31F4] h-10 w-10 flex justify-center items-center rounded-l-md text-white hover:opacity-80 cursor-pointer">
             <FiSearch className="text-base" />
           </div>
           <input
             type="text"
             placeholder="...جست و جو"
-            className="bg-transparent outline-none w-full text-sm text-right placeholder:text-right text-black/80"
+            className="bg-transparent font-yekanLight outline-none w-full text-sm text-right placeholder:text-right text-black/80"
           />
         </div>
         <Image
